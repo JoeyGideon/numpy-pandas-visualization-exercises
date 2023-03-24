@@ -170,7 +170,7 @@ np.sum(c*np.transpose(c))
 np.product(c*np.transpose(c))
 
 ## Setup 4
-d = ([
+d = np.array([
     [90, 30, 45, 0, 120, 180],
     [45, -90, -30, 270, 90, 0],
     [60, 45, -45, 90, -45, 180]
@@ -183,9 +183,9 @@ np.cos(d)
 # Exercise 3 - Find the tangent of all the numbers in d
 np.tan(d)
 # Exercise 4 - Find all the negative numbers in d
-
+d[d<0]
 # Exercise 5 - Find all the positive numbers in d
-
+d[d>0]
 # Exercise 6 - Return an array of only the unique numbers in d.
 np.unique(d)
 # Exercise 7 - Determine how many unique numbers there are in d.
