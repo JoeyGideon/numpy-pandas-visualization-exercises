@@ -6,18 +6,18 @@ from pydataset import data
 my_list = ["kiwi", "mango", "strawberry", "pineapple", "gala apple", "honeycrisp apple", "tomato", "watermelon","honeydew", "kiwi", "kiwi", "kiwi", "mango", "blueberry", "blackberry", "gooseberry", "papaya"]
 my_fruit = pd.Series(my_list)
 # Use Series attributes and methods to explore your fruits Series.
-my_fruit
 # Determine the number of elements in fruits.
-# 17
+my_fruit.count()
 # Output only the index from fruits.
 my_fruit.index
 # Output only the values from fruits.
 my_fruit.values
 # Confirm the data type of the values in fruits.
-type(my_fruit)
-# <class 'pandas.core.series.Series'>
+my_fruit.describe
 # Output only the first five values from fruits. Output the last three values. Output two random values from fruits.
 my_fruit.head()
+my_fruit.tail(3)
+my_fruit.sample(2)
 # Run the .describe() on fruits to see what information it returns when called on a Series with string values.
 my_fruit.describe()
 # Run the code necessary to produce only the unique string values from fruits.
@@ -25,13 +25,9 @@ my_fruit.unique()
 # Determine how many times each unique string value occurs in fruits.
 my_fruit.value_counts()
 # Determine the string value that occurs most frequently in fruits.
-my_fruit.value_counts()
-highest = my_fruit.index[0]
-print(highest)
+my_fruit.mode()
 # Determine the string value that occurs least frequently in fruits.
-my_fruit.value_counts()
-lowest = my_fruit.index[-1]
-print(lowest)
+my_fruit.value_counts().nsmallest(keep='all')
 
 # Exercises Part II
 # Explore more attributes and methods while you continue to work with the fruits Series.
